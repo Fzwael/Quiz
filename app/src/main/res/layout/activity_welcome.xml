@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d15400"
+    android:orientation="vertical"
+    android:weightSum="1" >
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcometxt"
+        android:id="@+id/wlcmtxt"
+        android:layout_x="118dp"
+        android:layout_y="100dp"
+        android:textColor="#a22eac"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:text="PLAY"
+        android:id="@+id/playbtn"
+        android:layout_x="0dp"
+        android:layout_y="250dp"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:width="500dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:id="@+id/hsbtn"
+        android:layout_x="0dp"
+        android:layout_y="330dp"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:width="500dp"
+        android:text="HIGH SCORE" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:text="EXIT"
+        android:id="@+id/exitbtn"
+        android:layout_x="0dp"
+        android:layout_y="410dp"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:width="500dp" />
+</AbsoluteLayout>

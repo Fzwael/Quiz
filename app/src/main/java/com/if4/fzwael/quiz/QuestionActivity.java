@@ -110,6 +110,7 @@ public class QuestionActivity extends Activity {
         @Override
         public void onFinish() {
             times.setText("Time is up");
+            getAnswer("xxxx"); // this gives a false answer so we go to result_activity
         }
         @Override
         public void onTick(long millisUntilFinished) {

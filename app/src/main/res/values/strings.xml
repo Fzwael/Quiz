@@ -4,4 +4,5 @@
     <string name="welcome">WELCOME</string>
     <string name="high_scores">High Scores</string>
     <string name="quit">Quit</string>
+    <string name="welcometxt">WELCOME</string>
 </resources>
