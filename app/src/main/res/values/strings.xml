@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="start">Start!</string>
+    <string name="welcome">WELCOME</string>
+    <string name="high_scores">High Scores</string>
+    <string name="quit">Quit</string>
+</resources>
