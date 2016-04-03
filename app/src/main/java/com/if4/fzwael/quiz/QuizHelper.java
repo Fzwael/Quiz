@@ -25,6 +25,14 @@ public class QuizHelper extends SQLiteOpenHelper {
     private static final String KEY_OPTA = "opta"; // option a
     private static final String KEY_OPTB = "optb"; // option b
     private static final String KEY_OPTC = "optc"; // option c
+
+   /* // high score table name
+    private static final String TABLE_HS = "hs";
+    // high score table colums names
+    private static final String HS_ID = "id";
+    private static final String HS_NAME = "name";
+    private static final String HS_SCORE = "score";*/
+
     private SQLiteDatabase dbase;
     public QuizHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -36,7 +44,18 @@ public class QuizHelper extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_QUES
                 + " TEXT, " + KEY_ANSWER + " TEXT, " + KEY_OPTA + " TEXT, "
                 + KEY_OPTB + " TEXT, " + KEY_OPTC + " TEXT)";
+        /*String sql2 = "CREATE TABLE IF NOT EXISTS " + TABLE_HS + " ( "
+                + HS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + HS_NAME
+                + " TEXT, " +  HS_SCORE + " INTEGER)";*/
+
         db.execSQL(sql);
+//        db.execSQL(sql2);
+        // TEST
+        ContentValues values = new ContentValues();
+       /* values.put(HS_ID,0);
+        values.put(HS_NAME,"fzwael");
+        values.put(HS_SCORE,55);
+        dbase.insert(TABLE_HS,null,values);*/
         addQuestion();
         // db.close();
     }
@@ -89,6 +108,7 @@ public class QuizHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_QUEST);
+//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_HS);
         // Create tables again
         onCreate(db);
     }
@@ -126,4 +146,22 @@ public class QuizHelper extends SQLiteOpenHelper {
         // return quest list
         return quesList;
     }
+
+/*    public List<HighScore> getHighScore(){
+        List<HighScore> quesList = new ArrayList<HighScore>();
+        String selectQuery = "SELECT * FROM" + TABLE_HS + "LIMIT 5";
+        dbase = this.getReadableDatabase();
+        Cursor cursor = dbase.rawQuery(selectQuery,null);
+        if (cursor.moveToFirst()) {
+            do {
+                HighScore highScore = new HighScore();
+                highScore.setID(cursor.getInt(0));
+                highScore.setName(cursor.getString(1));
+                highScore.setHs(cursor.getInt(2));
+                quesList.add(highScore);
+            } while (cursor.moveToNext());
+        }
+        // return quest list
+        return quesList;
+    }*/
 }

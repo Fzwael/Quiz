@@ -1,7 +1,9 @@
 package com.if4.fzwael.quiz;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +20,10 @@ public class ResultActivity extends Activity {
         Bundle b = getIntent().getExtras();
         int score = b.getInt("score");
         textResult.setText("Your score is " + " " + score + ". Thanks for playing my game.");
+        SharedPreferences prefs = this.getSharedPreferences("highScore", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("key", score);
+        editor.commit();
     }
     public void playagain(View o) {
         Intent intent = new Intent(this, QuestionActivity.class);

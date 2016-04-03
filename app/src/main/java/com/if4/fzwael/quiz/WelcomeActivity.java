@@ -29,5 +29,12 @@ public class WelcomeActivity extends Activity{
                 startActivity(intent);
             }
         });
+        hsbtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeActivity.this,HighScoreActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
