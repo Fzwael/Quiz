@@ -19,7 +19,6 @@ public class HighScoreActivity extends Activity {
         setContentView(R.layout.activity_high_score);
         TextView textResult = (TextView) findViewById(R.id.hstxt);
         SharedPreferences prefs = this.getSharedPreferences("highScore", Context.MODE_PRIVATE);
-        int score = prefs.getInt("key", 0); //0 is the default value
 
     }
 }
