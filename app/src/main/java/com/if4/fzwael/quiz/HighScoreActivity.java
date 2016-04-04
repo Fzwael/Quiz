@@ -21,7 +21,6 @@ public class HighScoreActivity extends Activity {
         SharedPreferences prefs = this.getSharedPreferences("highScore", Context.MODE_PRIVATE);
         int score = prefs.getInt("key", 0); //0 is the default value
         String sscore = "" + score;
-        Log.d("a","score : " + score);
         textResult.setText(sscore);
     }
 }
