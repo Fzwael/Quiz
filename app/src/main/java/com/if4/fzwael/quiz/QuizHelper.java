@@ -208,22 +208,4 @@ public class QuizHelper extends SQLiteOpenHelper {
         Log.d("LIST" , ""+quesList.size());
         return quesList;
     }
-
-/*    public List<HighScore> getHighScore(){
-        List<HighScore> quesList = new ArrayList<HighScore>();
-        String selectQuery = "SELECT * FROM" + TABLE_HS + "LIMIT 5";
-        dbase = this.getReadableDatabase();
-        Cursor cursor = dbase.rawQuery(selectQuery,null);
-        if (cursor.moveToFirst()) {
-            do {
-                HighScore highScore = new HighScore();
-                highScore.setID(cursor.getInt(0));
-                highScore.setName(cursor.getString(1));
-                highScore.setHs(cursor.getInt(2));
-                quesList.add(highScore);
-            } while (cursor.moveToNext());
-        }
-        // return quest list
-        return quesList;
-    }*/
 }
