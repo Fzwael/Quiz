@@ -30,7 +30,7 @@ public class QuestionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         QuizHelper db = new QuizHelper(this);  // my question bank class
-        quesList = db.getAllQuestions("a");  // this will fetch all quetonall questions
+        quesList = db.getAllQuestions("a");  // this will fetch all quetonall questions -- 2nc mthod ( json)
         Log.d("FUCK" , ""+ quesList.size());
         currentQ = quesList.get(qid); // the current question
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);
