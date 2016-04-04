@@ -5,7 +5,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.StrictMode;
+import android.util.Log;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -144,6 +157,55 @@ public class QuizHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         // return quest list
+        return quesList;
+    }
+
+    public List<Question> getAllQuestions(String url) {
+        List<Question> quesList = new ArrayList<Question>();
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .penaltyLog()
+                .penaltyDialog()
+                .build());
+
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
+                .penaltyLog()
+                .build());
+        JSONObject json = null;
+        String str = "";
+        HttpResponse response;
+        HttpClient myClient = new DefaultHttpClient();
+        HttpPost myConnection = new HttpPost("http://quiz-fzwael.rhcloud.com/qst.json");
+
+        try {
+            response = myClient.execute(myConnection);
+            str = EntityUtils.toString(response.getEntity(), "UTF-8");
+
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try{
+
+            JSONArray jArray = new JSONArray(str);
+            Log.d("LIST" , ""+jArray.length());
+            for (int i=0 ; i< jArray.length() ; i++){
+                json = jArray.getJSONObject(i);
+                Question quest = new Question();
+                quest.setQUESTION(json.getString("question"));
+                quest.setANSWER(json.getString("answer"));
+                quest.setOPTA(json.getString("opta"));
+                quest.setOPTB(json.getString("optb"));
+                quest.setOPTC(json.getString("optc"));
+                quesList.add(quest);
+                Log.d("LIST" , "ADDED ! "+i);
+            }
+        } catch ( JSONException e) {
+            e.printStackTrace();
+        }
+        // return quest list
+        Log.d("LIST" , ""+quesList.size());
         return quesList;
     }
 

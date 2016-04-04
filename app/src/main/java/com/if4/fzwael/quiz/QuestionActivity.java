@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,7 +30,8 @@ public class QuestionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         QuizHelper db = new QuizHelper(this);  // my question bank class
-        quesList = db.getAllQuestions();  // this will fetch all quetonall questions
+        quesList = db.getAllQuestions("a");  // this will fetch all quetonall questions
+        Log.d("FUCK" , ""+ quesList.size());
         currentQ = quesList.get(qid); // the current question
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);
         // the textview in which the question will be displayed
