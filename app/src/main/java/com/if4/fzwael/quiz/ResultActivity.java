@@ -26,7 +26,7 @@ public class ResultActivity extends Activity {
         editor.commit();
     }
     public void playagain(View o) {
-        Intent intent = new Intent(this, QuestionActivity.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
     }
 }

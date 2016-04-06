@@ -20,6 +20,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -157,10 +159,11 @@ public class QuizHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         // return quest list
+        Collections.shuffle(quesList);
         return quesList;
     }
 
-    public List<Question> getAllQuestions(String url) {
+    public List<Question> getAllQuestions(String code) {
         List<Question> quesList = new ArrayList<Question>();
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                 .penaltyLog()
@@ -174,7 +177,7 @@ public class QuizHelper extends SQLiteOpenHelper {
         String str = "";
         HttpResponse response;
         HttpClient myClient = new DefaultHttpClient();
-        HttpPost myConnection = new HttpPost("http://quiz-fzwael.rhcloud.com/qst.json");
+        HttpPost myConnection = new HttpPost("http://quiz-fzwael.rhcloud.com/"+code+".json");
 
         try {
             response = myClient.execute(myConnection);
@@ -189,7 +192,6 @@ public class QuizHelper extends SQLiteOpenHelper {
         try{
 
             JSONArray jArray = new JSONArray(str);
-            Log.d("LIST" , ""+jArray.length());
             for (int i=0 ; i< jArray.length() ; i++){
                 json = jArray.getJSONObject(i);
                 Question quest = new Question();
@@ -199,13 +201,12 @@ public class QuizHelper extends SQLiteOpenHelper {
                 quest.setOPTB(json.getString("optb"));
                 quest.setOPTC(json.getString("optc"));
                 quesList.add(quest);
-                Log.d("LIST" , "ADDED ! "+i);
             }
         } catch ( JSONException e) {
             e.printStackTrace();
         }
         // return quest list
-        Log.d("LIST" , ""+quesList.size());
+        Collections.shuffle(quesList);
         return quesList;
     }
 }

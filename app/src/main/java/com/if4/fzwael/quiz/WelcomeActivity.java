@@ -12,13 +12,14 @@ import android.widget.TextView;
  */
 public class WelcomeActivity extends Activity{
 
-    Button playbtn , hsbtn , exitbtn ;
+    Button playbtn , hsbtn , exitbtn , playlivebtn ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         playbtn = (Button) findViewById(R.id.playbtn);
+        playlivebtn = (Button) findViewById(R.id.playlivebtn);
         hsbtn = (Button) findViewById(R.id.hsbtn);
         exitbtn = (Button) findViewById(R.id.exitbtn);
 
@@ -26,9 +27,23 @@ public class WelcomeActivity extends Activity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(WelcomeActivity.this,QuestionActivity.class);
+                Bundle b = new Bundle();
+                b.putString("choice","local");
+                intent.putExtras(b);
                 startActivity(intent);
+                finish();
             }
         });
+
+        playlivebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeActivity.this,LiveActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         hsbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

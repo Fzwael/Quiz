@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -30,8 +31,18 @@ public class QuestionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         QuizHelper db = new QuizHelper(this);  // my question bank class
-        quesList = db.getAllQuestions("a");  // this will fetch all quetonall questions -- 2nc mthod ( json)
-        Log.d("FUCK" , ""+ quesList.size());
+        Bundle b = getIntent().getExtras();
+
+        if (b.getString("choice").equals("local"))
+            quesList = db.getAllQuestions();  // this will fetch all quetonall questions -- 2nc mthod ( json)
+        else
+            quesList = db.getAllQuestions(b.getString("choice"));
+        if (quesList.size() == 0){
+            Toast.makeText(this, "Code not valid ! Try again",
+            Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this,LiveActivity.class);
+            startActivity(intent);
+        }else{
         currentQ = quesList.get(qid); // the current question
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);
         // the textview in which the question will be displayed
@@ -73,7 +84,7 @@ public class QuestionActivity extends Activity {
             }
         });
     }
-
+    }
     public void getAnswer(String AnswerString) {
         if (currentQ.getANSWER().equals(AnswerString)) {
             // if conditions matches increase the int (score) by 1
@@ -104,6 +115,7 @@ public class QuestionActivity extends Activity {
             finish();
         }
     }
+
     public class CounterClass extends CountDownTimer {
         public CounterClass(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);

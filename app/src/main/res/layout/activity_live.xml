@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d15400"
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz Code"
+        android:id="@+id/codetxt"
+        android:layout_x="114dp"
+        android:layout_y="72dp"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeinput"
+        android:layout_x="122dp"
+        android:layout_y="123dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:id="@+id/liveplaybtn"
+        android:layout_x="71dp"
+        android:layout_y="303dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        android:id="@+id/downloadbtn"
+        android:layout_x="239dp"
+        android:layout_y="292dp" />
+</AbsoluteLayout>
