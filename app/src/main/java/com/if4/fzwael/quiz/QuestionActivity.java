@@ -57,7 +57,7 @@ public class QuestionActivity extends Activity {
         times = (TextView) findViewById(R.id.timers);
         // method which will set the things up for our game
         setQuestionView();
-        times.setText("00:02:00");
+        times.setText("00:01:00");
         // A timer of 60 seconds to play for, with an interval of 1 second (1000 milliseconds)
         CounterClass timer = new CounterClass(60000, 1000);
         timer.start();
@@ -125,6 +125,7 @@ public class QuestionActivity extends Activity {
         public void onFinish() {
             times.setText("Time is up");
             getAnswer("xxxx"); // this gives a false answer so we go to result_activity
+            finish();
         }
         @Override
         public void onTick(long millisUntilFinished) {
@@ -139,7 +140,7 @@ public class QuestionActivity extends Activity {
                     TimeUnit.MILLISECONDS.toSeconds(millis)
                             - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS
                             .toMinutes(millis)));
-            System.out.println(hms);
+            // System.out.println(hms);
             times.setText(hms);
         }
     }

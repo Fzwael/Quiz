@@ -12,7 +12,7 @@ import android.widget.TextView;
  */
 public class LiveActivity extends Activity {
     TextView codeinput;
-    Button liveplaybtn , downloadbtn;
+    Button liveplaybtn , backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class LiveActivity extends Activity {
         setContentView(R.layout.activity_live);
         codeinput = (TextView) findViewById(R.id.codeinput);
         liveplaybtn = (Button) findViewById(R.id.liveplaybtn);
-        downloadbtn = (Button) findViewById(R.id.downloadbtn);
+        backbtn = (Button) findViewById(R.id.backbtn);
 
         liveplaybtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +29,15 @@ public class LiveActivity extends Activity {
                 Bundle b = new Bundle();
                 b.putString("choice",codeinput.getText().toString());
                 intent.putExtras(b);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LiveActivity.this,WelcomeActivity.class);
                 startActivity(intent);
                 finish();
             }

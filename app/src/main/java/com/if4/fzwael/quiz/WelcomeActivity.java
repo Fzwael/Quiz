@@ -3,6 +3,8 @@ package com.if4.fzwael.quiz;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PowerManager;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +14,7 @@ import android.widget.TextView;
  */
 public class WelcomeActivity extends Activity{
 
-    Button playbtn , hsbtn , exitbtn , playlivebtn ;
+    Button playbtn , hsbtn , exitbtn , playlivebtn , aboutbnt ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class WelcomeActivity extends Activity{
         playlivebtn = (Button) findViewById(R.id.playlivebtn);
         hsbtn = (Button) findViewById(R.id.hsbtn);
         exitbtn = (Button) findViewById(R.id.exitbtn);
+        aboutbnt = (Button) findViewById(R.id.aboutbtn);
 
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +52,24 @@ public class WelcomeActivity extends Activity{
             public void onClick(View view) {
                 Intent intent = new Intent(WelcomeActivity.this,HighScoreActivity.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        aboutbnt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeActivity.this,AboutActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        exitbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveTaskToBack(true);
+                WelcomeActivity.this.finish();
             }
         });
     }

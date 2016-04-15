@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.if4.fzwael.quiz"
-        minSdkVersion 19
+        minSdkVersion 10
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"

@@ -6,4 +6,14 @@
     <string name="quit">Quit</string>
     <string name="welcometxt">WELCOME</string>
     <string name="hs">hs</string>
+    <string name="play">PLAY</string>
+    <string name="high_score">HIGH SCORE</string>
+    <string name="exit">EXIT</string>
+    <string name="play_live">PLAY LIVE</string>
+    <string name="your_high_score_is">Your High Score Is :</string>
+    <string name="plays">PLAY</string>
+    <string name="high_score_st">HIGH SCORE</string>
+    <string name="exit_s">EXIT</string>
+    <string name="play_live_s">PLAY LIVE</string>
+    <string name="about">ABOUT</string>
 </resources>

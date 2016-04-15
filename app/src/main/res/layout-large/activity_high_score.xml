@@ -11,10 +11,10 @@
     <TextView
         android:layout_width="101dp"
         android:layout_height="wrap_content"
-        android:layout_x="122dp"
-        android:layout_y="239dp"
+        android:layout_x="250dp"
+        android:layout_y="453dp"
         android:textColor="#a22eac"
-        android:textSize="30sp"
+        android:textSize="70sp"
         android:text="@string/hs"
         android:id="@+id/hstxt" />
 
@@ -31,15 +31,15 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_marginBottom="99dp"
-        android:layout_x="75dp"
-        android:layout_y="408dp" />
+        android:layout_x="178dp"
+        android:layout_y="709dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="612dp"
+        android:layout_height="136dp"
         android:id="@+id/imageView3"
-        android:layout_x="1dp"
-        android:layout_y="45dp"
+        android:layout_x="-8dp"
+        android:layout_y="158dp"
         android:src="@drawable/highscore"/>
 
 </AbsoluteLayout>

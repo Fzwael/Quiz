@@ -66,7 +66,7 @@ public class QuizHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
 //        db.execSQL(sql2);
         // TEST
-        ContentValues values = new ContentValues();
+       // ContentValues values = new ContentValues();
        /* values.put(HS_ID,0);
         values.put(HS_NAME,"fzwael");
         values.put(HS_SCORE,55);
@@ -142,7 +142,7 @@ public class QuizHelper extends SQLiteOpenHelper {
     public List<Question> getAllQuestions() {
         List<Question> quesList = new ArrayList<Question>();
         // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE_QUEST;
+        String selectQuery = "SELECT * FROM " + TABLE_QUEST;
         dbase = this.getReadableDatabase();
         Cursor cursor = dbase.rawQuery(selectQuery, null);
         // looping through all rows and adding to list

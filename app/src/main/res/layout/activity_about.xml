@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE4E1"
+    android:orientation="vertical"
+    android:weightSum="1" >
+
+    <Button
+        android:text="Back"
+        android:id="@+id/backbtn"
+        android:textColor="#FFFEFA"
+        android:textSize="40sp"
+        android:layout_width="250sp"
+        android:layout_height="60sp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_marginBottom="99dp"
+        android:layout_x="60dp"
+        android:layout_y="440sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Wael Fezai"
+        android:layout_x="20sp"
+        android:layout_y="75sp"
+        android:textSize="40sp"
+        android:id="@+id/waeltxt"
+        android:textColor="#318ce2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Houssem Abdelkbir"
+        android:layout_x="20sp"
+        android:layout_y="150sp"
+        android:textSize="40sp"
+        android:id="@+id/houssemtxt"
+        android:textColor="#318ce2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Chadi Naghmouchi"
+        android:layout_x="20sp"
+        android:layout_y="225sp"
+        android:textSize="40sp"
+        android:id="@+id/chaditxt"
+        android:textColor="#318ce2"/>
+
+</AbsoluteLayout>

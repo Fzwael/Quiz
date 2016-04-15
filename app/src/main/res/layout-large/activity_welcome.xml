@@ -12,90 +12,88 @@
         android:id="@+id/playbtn"
         android:textColor="#FFFEFA"
         android:textSize="30sp"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_marginBottom="99dp"
-        android:layout_x="60dp"
-        android:layout_y="160dp"
-        android:gravity="center"
-        android:layout_gravity="center"/>
+        android:layout_x="50dp"
+        android:layout_y="400dp" />
 
     <Button
         android:text="@string/play_live_s"
         android:id="@+id/playlivebtn"
         android:textColor="#FFFEFA"
         android:textSize="30sp"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_marginBottom="99dp"
-        android:layout_x="60dp"
-        android:layout_y="230dp" />
+        android:layout_x="50dp"
+        android:layout_y="480dp" />
 
     <Button
         android:id="@+id/hsbtn"
-        android:text="@string/high_score_st"
+        android:text="@string/high_score"
         android:textColor="#FFFEFA"
         android:textSize="30sp"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_marginBottom="99dp"
-        android:layout_x="60dp"
-        android:layout_y="300dp" />
+        android:layout_x="50dp"
+        android:layout_y="560dp" />
 
     <Button
         android:text="@string/exit_s"
         android:id="@+id/exitbtn"
         android:textColor="#FFFEFA"
         android:textSize="30sp"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_marginBottom="99dp"
-        android:layout_x="60dp"
-        android:layout_y="370dp" />
+        android:layout_x="50dp"
+        android:layout_y="640dp" />
 
     <Button
         android:text="@string/about"
         android:id="@+id/aboutbtn"
         android:textColor="#FFFEFA"
         android:textSize="30sp"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="500dp"
+        android:layout_height="70dp"
         android:background="@drawable/buttonshape"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_marginBottom="99dp"
-        android:layout_x="60dp"
-        android:layout_y="440sp"/>
+        android:layout_x="50dp"
+        android:layout_y="720dp" />
 
     <ImageView
-        android:layout_width="261dp"
-        android:layout_height="261dp"
+        android:layout_width="wrap_content"
+        android:layout_height="492dp"
         android:id="@+id/imageView"
         android:src="@drawable/welcome"
-        android:layout_x="52dp"
-        android:layout_y="-60dp" />
+        android:layout_x="-5dp"
+        android:layout_y="-65dp" />
 
 
 </AbsoluteLayout>
